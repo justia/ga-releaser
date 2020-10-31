@@ -3,7 +3,7 @@ const { getOctokit } = require('@actions/github');
 
 const input = require('../github/input');
 
-const { GITHUB_REPOSITORY, GITHUB_ACTOR } = process.env;
+const { GITHUB_REPOSITORY } = process.env;
 const [owner, repo] = GITHUB_REPOSITORY.split('/');
 
 class GitHubPlugin extends Plugin {
