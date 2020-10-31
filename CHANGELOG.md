@@ -1,3 +1,11 @@
+## [0.1.1](https://github.com/justia/ga-releaser/compare/0.1.0...0.1.1) (2020-10-31)
+
+
+### Bug Fixes
+
+* owner issue ([b1af605](https://github.com/justia/ga-releaser/commit/b1af605f2dd39a018da23ce72497e628e2ce3180))
+* release command has await to wait all output ([8836be3](https://github.com/justia/ga-releaser/commit/8836be31d547ad893798605d1006364f5fa8b000))
+
 # 0.1.0 (2020-10-31)
 
 
