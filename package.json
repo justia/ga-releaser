@@ -1,0 +1,45 @@
+{
+  "name": "@justia/release",
+  "version": "0.0.0",
+  "description": "A script to generate releases and changelog",
+  "main": "src/index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justia/ga-releaser.git"
+  },
+  "keywords": [
+    "justia",
+    "release",
+    "changelog",
+    "internal",
+    "tool",
+    "github",
+    "action"
+  ],
+  "author": "Alonso Zuniga",
+  "bugs": {
+    "url": "https://github.com/justia/ga-releaser/issues"
+  },
+  "homepage": "https://github.com/justia/ga-releaser#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "@actions/exec": "^1.0.4",
+    "@actions/github": "^4.0.0",
+    "@release-it/conventional-changelog": "^2.0.0",
+    "calver": "^20.5.3",
+    "release-it": "^14.2.0",
+    "yaml": "^1.10.0"
+  },
+  "devDependencies": {
+    "@justia/eslint-config-node": "^0.2.2",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.2.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-promise": "^4.2.1",
+    "prettier": "^2.1.2"
+  }
+}
