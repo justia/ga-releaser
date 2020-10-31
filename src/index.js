@@ -39,19 +39,17 @@ try {
     group('Release IT config', async () => info(JSON.stringify(jsonOpts)));
 
     group('release-it', async () => {
-        return (
-            release(jsonOpts)
-                // eslint-disable-next-line promise/always-return
-                .then((output) => {
-                    setOutput('json-result', output);
-                    setOutput('version', output.version);
-                    setOutput('latest-version', output.latestVersion);
-                    setOutput('changelog', output.changelog);
-                })
-                .catch((error) => {
-                    setFailed(error.message);
-                })
-        );
+        await release(jsonOpts)
+            // eslint-disable-next-line promise/always-return
+            .then((output) => {
+                setOutput('json-result', output);
+                setOutput('version', output.version);
+                setOutput('latest-version', output.latestVersion);
+                setOutput('changelog', output.changelog);
+            })
+            .catch((error) => {
+                setFailed(error.message);
+            });
     });
 } catch (error) {
     setFailed(error.message);
