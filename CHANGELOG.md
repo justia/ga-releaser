@@ -1,3 +1,5 @@
+## [0.1.1](https://github.com/justia/ga-releaser/compare/0.1.0...0.1.1) (2020-10-31)
+
 # 0.1.0 (2020-10-31)
 
 
