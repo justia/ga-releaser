@@ -2,7 +2,7 @@ const release = require('release-it');
 const { setOutput, setFailed, info, group } = require('@actions/core');
 
 const { dirname } = require('./utilities');
-// const {exec} = require('@actions/exec');
+
 process.env['INPUT_GITHUB-TOKEN'] = process.env.GITHUB_TOKEN;
 const input = require('./github/input');
 
