@@ -1,3 +1,10 @@
+## [0.1.2](https://github.com/justia/ga-releaser/compare/0.1.1...0.1.2) (2020-10-31)
+
+
+### Bug Fixes
+
+* testing variable is removed ([81ce253](https://github.com/justia/ga-releaser/commit/81ce253922e9371ecca831063737d108ec569817))
+
 ## [0.1.1](https://github.com/justia/ga-releaser/compare/0.1.0...0.1.1) (2020-10-31)
 
 
