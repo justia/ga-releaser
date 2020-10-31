@@ -52,7 +52,7 @@ class GitHubPlugin extends Plugin {
 
     async mergePullRequest(number) {
         return this.octokit.pulls.merge({
-            owner: GITHUB_ACTOR || input['git-user-name'],
+            owner,
             repo,
             pull_number: number
         });

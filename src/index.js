@@ -2,7 +2,7 @@ const release = require('release-it');
 const { setOutput, setFailed, info, group } = require('@actions/core');
 
 const { dirname } = require('./utilities');
-// const {exec} = require('@actions/exec');
+
 process.env['INPUT_GITHUB-TOKEN'] = process.env.GITHUB_TOKEN;
 const input = require('./github/input');
 
@@ -39,19 +39,17 @@ try {
     group('Release IT config', async () => info(JSON.stringify(jsonOpts)));
 
     group('release-it', async () => {
-        return (
-            release(jsonOpts)
-                // eslint-disable-next-line promise/always-return
-                .then((output) => {
-                    setOutput('json-result', output);
-                    setOutput('version', output.version);
-                    setOutput('latest-version', output.latestVersion);
-                    setOutput('changelog', output.changelog);
-                })
-                .catch((error) => {
-                    setFailed(error.message);
-                })
-        );
+        await release(jsonOpts)
+            // eslint-disable-next-line promise/always-return
+            .then((output) => {
+                setOutput('json-result', output);
+                setOutput('version', output.version);
+                setOutput('latest-version', output.latestVersion);
+                setOutput('changelog', output.changelog);
+            })
+            .catch((error) => {
+                setFailed(error.message);
+            });
     });
 } catch (error) {
     setFailed(error.message);
