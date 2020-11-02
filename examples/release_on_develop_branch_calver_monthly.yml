@@ -1,0 +1,20 @@
+name: Release
+on:
+  #At 00:00 on day-of-month 1.
+  schedule:
+    - cron:  '0 0 1 * *'
+jobs:
+  release:
+    name: Conventional Release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: develop
+      - uses: actions/setup-node@v2-beta
+      - uses: justia/ga-releaser@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          versioning-specification: calver
+          use-version-branch: false
