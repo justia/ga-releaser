@@ -1,5 +1,4 @@
 const Plugin = require('release-it/lib/plugin/Plugin');
-const { context } = require('@actions/github');
 const { getInput, info } = require('@actions/core');
 
 const input = require('../github/input');
@@ -26,6 +25,10 @@ class GitPlugin extends Plugin {
     }
 
     async beforeBump() {
+        if (!input['use-version-branch']) {
+            return null;
+        }
+
         const version = this.config.getContext('version');
         this.branch = `v${version}`;
         info(`Handling version ${this.branch}`);
@@ -39,6 +42,10 @@ class GitPlugin extends Plugin {
     }
 
     async beforeRelease() {
+        if (!input['use-version-branch']) {
+            return null;
+        }
+
         return this.step({
             enabled: true,
             task: () => this.pushNewBranch(this.branch),
@@ -48,6 +55,10 @@ class GitPlugin extends Plugin {
     }
 
     async afterRelease() {
+        if (!input['use-version-branch'] || !input['remove-version-branch']) {
+            return null;
+        }
+
         return this.step({
             enabled: true,
             task: () => this.removeBranch(this.branch),

@@ -74,6 +74,31 @@ inputs:
     default: 'master'
     required: false
 
+  head-branch:
+    description: 'The head branch of repository'
+    default: 'develop'
+    required: false
+
+  use-pr:
+    description: 'Create a pull request for the change'
+    default: true
+    required: false
+
+  automerge-pr:
+    description: 'Automerge the pull request created'
+    default: true
+    required: false
+
+  use-version-branch:
+    description: 'Use a versioned branch'
+    default: true
+    required: false
+
+  remove-version-branch:
+    description: 'Remove version branch when the pull request is merged'
+    default: true
+    required: false
+
 outputs:
   changelog:
     description: 'The generated changelog for the new version'
