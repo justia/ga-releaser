@@ -25,7 +25,12 @@ const inputValues = {
     'git-user-name': pusher ? pusher.user : 'aazbeltran',
     'git-user-email': pusher ? pusher.email : 'alonso.zuniga@justia.com',
     'fallback-version': '0.0.0',
-    'base-branch': 'master'
+    'base-branch': 'master',
+    'head-branch': 'develop',
+    'use-pr': true,
+    'automerge-pr': true,
+    'use-version-branch': true,
+    'remove-version-branch': true
 };
 
 startGroup(`Loading input values...`);

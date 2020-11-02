@@ -24,7 +24,7 @@ try {
             }
         },
         ci: true,
-        requireBranch: input['base-branch']
+        requireBranch: input['head-branch']
     };
     jsonOpts.plugins[`${dirname}/plugins/github.js`] = {};
     jsonOpts.plugins[`${dirname}/plugins/git.js`] = {};

@@ -3,12 +3,20 @@ const { getOctokit } = require('@actions/github');
 
 const input = require('../github/input');
 
-const { GITHUB_REPOSITORY } = process.env;
+const { GITHUB_REPOSITORY, GITHUB_TOKEN } = process.env;
 const [owner, repo] = GITHUB_REPOSITORY.split('/');
 
 class GitHubPlugin extends Plugin {
+    // eslint-disable-next-line class-methods-use-this
+    isEnabled() {
+        const isSameBranch = input['head-branch'] === input['base-branch'];
+        const useVersionBranch = input['use-version-branch'];
+        const usePr = input['use-pr'];
+        return usePr && (!isSameBranch || useVersionBranch);
+    }
+
     init() {
-        this.octokit = getOctokit(process.env.GITHUB_TOKEN);
+        this.octokit = getOctokit(GITHUB_TOKEN);
     }
 
     async afterRelease() {
@@ -19,14 +27,18 @@ class GitHubPlugin extends Plugin {
             label: 'Git create pull request',
             prompt: 'create_pull_request'
         })
-            .then(({ data }) =>
-                this.step({
+            .then(({ data }) => {
+                if (!input['automerge-pr']) {
+                    return null;
+                }
+
+                return this.step({
                     enabled: true,
                     task: () => this.mergePullRequest(data.number),
                     label: 'Git merge pull request',
                     prompt: 'merge_pull_request'
-                })
-            )
+                });
+            })
             .catch((err) => {
                 this.log.error(`An error occurred while creating the pull request`);
                 this.debug(err);
@@ -34,11 +46,12 @@ class GitHubPlugin extends Plugin {
     }
 
     async createPullRequest(version, body) {
-        const branch = `v${version}`;
+        const release = `v${version}`;
+        const branch = input['use-version-branch'] ? release : input['head-branch'];
         const base = input['base-branch'];
 
         const pr = {
-            title: `Release ${branch}`,
+            title: `Release ${release}`,
             body,
             owner,
             repo,
