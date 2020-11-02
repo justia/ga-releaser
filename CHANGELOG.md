@@ -1,3 +1,10 @@
+# [0.2.0](https://github.com/justia/ga-releaser/compare/0.1.2...0.2.0) (2020-11-02)
+
+
+### Features
+
+* pr and versioned branch are parameterizable ([02f9a27](https://github.com/justia/ga-releaser/commit/02f9a27e71e73969d934577461ef931ae6ec03d7))
+
 ## [0.1.2](https://github.com/justia/ga-releaser/compare/0.1.1...0.1.2) (2020-10-31)
 
 
