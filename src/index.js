@@ -1,11 +1,13 @@
-const release = require('release-it');
-const { setOutput, setFailed, info, group } = require('@actions/core');
+const path = require('path');
+const { Log } = require('@justia/releaser/src/log');
+const release = require('@justia/releaser/src/release');
+const config = require('@justia/releaser/src/index');
 
-const { dirname } = require('./utilities');
-const input = require('./github/input');
+const dirname = path.resolve(__dirname);
+const input = require('./input');
 
 try {
-    const jsonOpts = {
+    Object.assign(config, {
         git: {
             commitMessage: input['git-message'],
             requireCommits: input['require-commits'],
@@ -18,37 +20,53 @@ try {
             publish: input['npm-publish']
         },
         plugins: {
-            '@release-it/conventional-changelog': {
+            '@justia/releaser/src/plugins/conventional-changelog.js': {
                 preset: input.preset,
                 infile: input['output-file']
+            },
+            '@justia/releaser/src/plugins/github.js': {
+                usePr: input['use-pr'],
+                automergePr: input['automerge-pr']
+            },
+            '@justia/releaser/src/plugins/git.js': {
+                removeVersionBranch: input['remove-version-branch'],
+                name: input['git-user-name'],
+                email: input['git-user-email']
             }
         },
         ci: true,
-        requireBranch: input['head-branch']
-    };
-    jsonOpts.plugins[`${dirname}/plugins/github.js`] = {};
-    jsonOpts.plugins[`${dirname}/plugins/git.js`] = {};
+        requireBranch: input['head-branch'],
+        justia: {
+            fallbackVersion: input['fallback-version'],
+            baseBranch: input['base-branch'],
+            headBranch: input['head-branch'],
+            useVersionBranch: input['use-version-branch'],
+            calverFormat: input['calver-format']
+        }
+    });
     if (input['versioning-specification'] === 'calver') {
-        jsonOpts.plugins[`${dirname}/plugins/calver.js`] = {
-            format: input['calver-format']
-        };
+        Object.assign(config.plugins, {
+            '@justia/releaser/src/plugins/calver.js': {
+                format: input['calver-format']
+            }
+        });
     }
 
-    group('Release IT config', async () => info(JSON.stringify(jsonOpts)));
+    Log.group('Release IT config', async () => Log.info(JSON.stringify(config)));
 
-    group('release-it', async () => {
-        await release(jsonOpts)
+    Log.group('release-it', () =>
+        release(config)
             // eslint-disable-next-line promise/always-return
             .then((output) => {
-                setOutput('json-result', output);
-                setOutput('version', output.version);
-                setOutput('latest-version', output.latestVersion);
-                setOutput('changelog', output.changelog);
+                Log.setOutput('json-result', output);
+                Log.setOutput('version', output.version);
+                Log.setOutput('latest-version', output.latestVersion);
+                Log.setOutput('changelog', output.changelog);
             })
             .catch((error) => {
-                setFailed(error.message);
-            });
-    });
+                Log.setFailed(error.message);
+            })
+    );
 } catch (error) {
-    setFailed(error.message);
+    Log.setFailed(error.message);
 }
