@@ -23,8 +23,8 @@
   },
   "homepage": "https://github.com/justia/ga-releaser#readme",
   "dependencies": {
-    "@justia/releaser": "^0.1.0",
     "@actions/github": "^4.0.0",
+    "@justia/releaser": "^1.1.0",
     "yaml": "^1.10.0"
   },
   "devDependencies": {
