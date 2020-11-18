@@ -1,4 +1,4 @@
-const { default: Log }  = require('@justia/releaser/dist/log');
+const { default: Log } = require('@justia/releaser/dist/log');
 const { default: release } = require('@justia/releaser/dist/release');
 const { default: config } = require('@justia/releaser/dist/index');
 
