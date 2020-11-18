@@ -1,5 +1,5 @@
-const { Log } = require('@justia/releaser/src/log');
-const { isBoolean, parseInputBoolean } = require('@justia/releaser/src/utilities');
+const { Log } = require('@justia/releaser/dist/log');
+const { isBoolean, parseInputBoolean } = require('@justia/releaser/dist/utilities');
 const { context } = require('@actions/github');
 const yaml = require('yaml');
 const fs = require('fs');
