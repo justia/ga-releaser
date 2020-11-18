@@ -1,9 +1,7 @@
-const path = require('path');
-const { Log } = require('@justia/releaser/src/log');
-const release = require('@justia/releaser/src/release');
-const config = require('@justia/releaser/src/index');
+const { Log } = require('@justia/releaser/dist/log');
+const release = require('@justia/releaser/dist/release');
+const config = require('@justia/releaser/dist/index');
 
-const dirname = path.resolve(__dirname);
 const input = require('./input');
 
 try {
@@ -20,15 +18,15 @@ try {
             publish: input['npm-publish']
         },
         plugins: {
-            '@justia/releaser/src/plugins/conventional-changelog.js': {
+            '@justia/releaser/dist/plugins/conventional-changelog.js': {
                 preset: input.preset,
                 infile: input['output-file']
             },
-            '@justia/releaser/src/plugins/github.js': {
+            '@justia/releaser/dist/plugins/github.js': {
                 usePr: input['use-pr'],
                 automergePr: input['automerge-pr']
             },
-            '@justia/releaser/src/plugins/git.js': {
+            '@justia/releaser/dist/plugins/git.js': {
                 removeVersionBranch: input['remove-version-branch'],
                 name: input['git-user-name'],
                 email: input['git-user-email']
@@ -46,7 +44,7 @@ try {
     });
     if (input['versioning-specification'] === 'calver') {
         Object.assign(config.plugins, {
-            '@justia/releaser/src/plugins/calver.js': {
+            '@justia/releaser/dist/plugins/calver.js': {
                 format: input['calver-format']
             }
         });
