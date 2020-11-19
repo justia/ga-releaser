@@ -1,6 +1,6 @@
-const { default: Log } = require('@justia/releaser/dist/log');
-const { default: release } = require('@justia/releaser/dist/release');
-const { default: config } = require('@justia/releaser/dist/index');
+const Log = require('@justia/releaser/dist/log');
+const release = require('@justia/releaser/dist/release');
+const config = require('@justia/releaser');
 
 const input = require('./input');
 

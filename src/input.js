@@ -1,4 +1,4 @@
-const { default: Log } = require('@justia/releaser/dist/log');
+const Log = require('@justia/releaser/dist/log');
 const { isBoolean, parseInputBoolean } = require('@justia/releaser/dist/utilities');
 const { context } = require('@actions/github');
 const yaml = require('yaml');
