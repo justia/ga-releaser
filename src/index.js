@@ -26,7 +26,7 @@ try {
                 usePr: input['use-pr'],
                 automergePr: input['automerge-pr']
             },
-            '@justia/releaser/dist/plugins/git.js': {
+            '@justia/releaser/dist/plugins/git-config.js': {
                 removeVersionBranch: input['remove-version-branch'],
                 name: input['git-user-name'],
                 email: input['git-user-email']
