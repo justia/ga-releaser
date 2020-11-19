@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/justia/ga-releaser/compare/1.0.0...1.0.1) (2020-11-19)
+
+
+### Bug Fixes
+
+* github action uses the release branch ([e6823ab](https://github.com/justia/ga-releaser/commit/e6823ab5923fa53019fd64fce8d34234d36800b4))
+
 # [1.0.0](https://github.com/justia/ga-releaser/compare/0.2.1...1.0.0) (2020-11-19)
 
 ## [0.2.1](https://github.com/justia/ga-releaser/compare/0.2.0...0.2.1) (2020-11-19)
