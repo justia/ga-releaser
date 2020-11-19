@@ -3,9 +3,10 @@ const release = require('@justia/releaser/dist/release');
 const config = require('@justia/releaser');
 
 const input = require('./input');
+const { mergeDeep } = require('./utilities');
 
 try {
-    Object.assign(config, {
+    mergeDeep(config, {
         git: {
             commitMessage: input['git-message'],
             requireCommits: input['require-commits'],
@@ -43,7 +44,7 @@ try {
         }
     });
     if (input['versioning-specification'] === 'calver') {
-        Object.assign(config.plugins, {
+        mergeDeep(config.plugins, {
             '@justia/releaser/dist/plugins/calver.js': {
                 format: input['calver-format']
             }
