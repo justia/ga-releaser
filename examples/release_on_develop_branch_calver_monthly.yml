@@ -13,7 +13,7 @@ jobs:
           ref: develop
           fetch-depth: 0
       - uses: actions/setup-node@v2-beta
-      - uses: justia/ga-releaser@master
+      - uses: justia/ga-releaser@release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
