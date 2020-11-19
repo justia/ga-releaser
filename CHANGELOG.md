@@ -1,3 +1,16 @@
+## [0.2.1](https://github.com/justia/ga-releaser/compare/0.2.0...0.2.1) (2020-11-19)
+
+
+### Bug Fixes
+
+* hotfix to default import from typescript ([1ff4e9c](https://github.com/justia/ga-releaser/commit/1ff4e9c672c82be3cb7f6cac6e02b9d664077f22))
+* hotfix to default import from typescript ([6c671c3](https://github.com/justia/ga-releaser/commit/6c671c3f71be7ba1ec863f0238145ee06e08985c))
+* hotfix to get the missing tags reference ([d213df5](https://github.com/justia/ga-releaser/commit/d213df54fad20e110f3540b74dcddc10acb90f6d))
+* modify default package handling ([35a5d80](https://github.com/justia/ga-releaser/commit/35a5d8024973c7069e2cfe6f30002fb971999d4d))
+* object deep merge implementation ([e6b39ef](https://github.com/justia/ga-releaser/commit/e6b39ef320d64e47f62804fb66e68f0d86ccb12c))
+* rename releaser src folder to dist ([3f8fd77](https://github.com/justia/ga-releaser/commit/3f8fd7789e5d39d6d12b7cc64233d403a5107aad))
+* update git-config plugin reference ([b4e8e94](https://github.com/justia/ga-releaser/commit/b4e8e94bb1703f8e6363a2da1f9402efa5acf876))
+
 # [0.2.0](https://github.com/justia/ga-releaser/compare/0.1.2...0.2.0) (2020-11-02)
 
 
