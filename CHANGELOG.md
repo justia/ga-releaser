@@ -1,3 +1,12 @@
+# [1.1.0](https://github.com/justia/ga-releaser/compare/1.0.1...1.1.0) (2020-12-29)
+
+
+### Features
+
+* github action to download and build node modules on release ([32b261f](https://github.com/justia/ga-releaser/commit/32b261fb94ef195ac0189c9b088e3545dc232511))
+* github action uses @justia/releaser cli instead of local proxy ([60d6b64](https://github.com/justia/ga-releaser/commit/60d6b64da23ea26eab986fea4c7cf2b5ad6fb084))
+* manual trigger parameter to define an specific version ([c227d5e](https://github.com/justia/ga-releaser/commit/c227d5e35f4e9f79bfebd7ba52b1b94413ef4521))
+
 ## [1.0.1](https://github.com/justia/ga-releaser/compare/1.0.0...1.0.1) (2020-11-19)
 
 
