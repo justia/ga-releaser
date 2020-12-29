@@ -1,4 +1,4 @@
-name: Release
+name: Update node_modules
 on:
   push:
     branches:
