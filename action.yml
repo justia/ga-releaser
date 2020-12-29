@@ -4,7 +4,7 @@ author: 'Justia Inc.'
 
 runs:
   using: 'node12'
-  main: 'src/index.js'
+  main: 'node_modules/@justia/releaser/dist/cli/index.js'
 
 branding:
   icon: 'file-minus'
