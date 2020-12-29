@@ -1,0 +1,30 @@
+name: Release
+on:
+  push:
+    branches:
+      - release
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Build npm packages
+        uses: bahmutov/npm-install@v1
+        with:
+          useLockFile: true
+        env:
+          NODE_ENV: production
+      - name: Commit files
+        run: |
+          git config --local user.email "alonso.zuniga@justia.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git commit -m "build: update node modules" -a | true
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
