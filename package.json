@@ -1,8 +1,7 @@
 {
-  "name": "@justia/release",
+  "name": "@justia/ga-releaser",
   "version": "1.0.1",
   "description": "A script to generate releases and changelog",
-  "main": "src/index.js",
   "scripts": {},
   "repository": {
     "type": "git",
@@ -23,19 +22,6 @@
   },
   "homepage": "https://github.com/justia/ga-releaser#readme",
   "dependencies": {
-    "@actions/github": "^4.0.0",
-    "@justia/releaser": "^1.1.1",
-    "yaml": "^1.10.0"
-  },
-  "devDependencies": {
-    "@justia/eslint-config-node": "^0.2.2",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.2.0",
-    "eslint-config-prettier": "^6.15.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-node": "^10.0.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-promise": "^4.2.1",
-    "prettier": "^2.1.2"
+    "@justia/releaser": "^1.2.0"
   }
 }
