@@ -21,6 +21,11 @@ inputs:
     default: true
     required: false
 
+  release-name:
+    description: 'GitHub Release title'
+    default: 'Release ${version}'
+    required: false
+
   npm-publish:
     description: 'NPM Publish. Default: false'
     default: false
