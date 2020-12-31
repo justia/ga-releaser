@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/justia/ga-releaser/compare/1.1.0...1.2.0) (2020-12-31)
+
+
+### Features
+
+* add input to configure a custom title on github release ([a7a5b21](https://github.com/justia/ga-releaser/commit/a7a5b21835fbbb90df3baab85a65eab2922375c7))
+
 # [1.1.0](https://github.com/justia/ga-releaser/compare/1.0.1...1.1.0) (2020-12-29)
 
 
