@@ -16,6 +16,7 @@ jobs:
       - uses: justia/ga-releaser@release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASER_BYPASS_PR_TOKEN: ${{ secrets.RELEASER_BYPASS_PR_TOKEN }}
         with:
           versioning-specification: calver
           use-version-branch: false
