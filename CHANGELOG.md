@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/justia/ga-releaser/compare/1.2.0...1.3.0) (2021-01-29)
+
+
+### Features
+
+* update @justia/releaser package with all improvements ([11dcb20](https://github.com/justia/ga-releaser/commit/11dcb209fe165f570a439ebccce12a5b03ba2efc))
+
 # [1.2.0](https://github.com/justia/ga-releaser/compare/1.1.0...1.2.0) (2020-12-31)
 
 
