@@ -43,7 +43,7 @@ inputs:
 
   calver-format:
     description: 'Format of calver. More info: https://www.npmjs.com/package/calver#available-format-tags'
-    default: 'YYYY.MM.MICRO'
+    default: 'YYYY.MINOR.MICRO'
     required: false
 
   output-file:
