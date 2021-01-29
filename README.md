@@ -20,6 +20,7 @@ jobs:
       - uses: justia/ga-releaser@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASER_BYPASS_PR_TOKEN: ${{ secrets.RELEASER_BYPASS_PR_TOKEN }}
 ```
 
 You can check the file `action.yml` to know what input values has the github action.
@@ -40,6 +41,7 @@ jobs:
       - uses: justia/ga-releaser@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASER_BYPASS_PR_TOKEN: ${{ secrets.RELEASER_BYPASS_PR_TOKEN }}
         with:
           versioning-specification: 'calver'
 ```
