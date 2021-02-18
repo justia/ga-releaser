@@ -81,7 +81,7 @@ To enable this feature is required to generate a personal token of an organizati
 This token needs to have the repo scope to allow pull request merging.
 
 To configure on organization, is required to create a new organization secret on the following link with the name `RELEASER_BYPASS_PR_TOKEN` and the token as a value:
-https://github.com/organizations/justia/settings/secrets/actions/new
+https://github.com/organizations/{orgname}/settings/secrets/actions/new
 
 > Disclaimer: This personal token is used only to merge the blocked pull requests.
 
