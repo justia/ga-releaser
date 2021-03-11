@@ -108,3 +108,6 @@ jobs:
 ```
 
 Once you already have this token defined as env variable, the script will use it when a branch merge is protected.
+
+## Known issues
+- In some cases if you have the configuration `remove-version-branch` marked as true, released can be marked as draft because the tag is removed, if you have this issue you can solve setting `remove-version-branch` as false until this problem is solved
