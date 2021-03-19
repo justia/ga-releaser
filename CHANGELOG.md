@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/justia/ga-releaser/compare/1.3.0...1.4.0) (2021-03-19)
+
+
+### Features
+
+* add manual execution update node_modules workflow ([1abaf5d](https://github.com/justia/ga-releaser/commit/1abaf5d7208bf8c0b6e2418f31620caad6fc5e26))
+
 # [1.3.0](https://github.com/justia/ga-releaser/compare/1.2.0...1.3.0) (2021-01-29)
 
 

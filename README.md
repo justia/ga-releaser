@@ -74,3 +74,40 @@ And you can set the format of calver with the input `calver-format`, the default
 |       `automerge-pr`       |                                                           Automerge the pull request created                                                          |            true            |       ❌      |
 |    `use-version-branch`    |                                                                 Use a versioned branch                                                                |            true            |       ❌      |
 |   `remove-version-branch`  |                                                 Remove version branch when the pull request is merged                                                 |            true            |       ❌      |
+
+# Branch protected bypass
+To enable this feature is required to generate a personal token of an organization admin here: https://github.com/settings/tokens/new?description=GA-Releaser%20merger%20token&scopes=repo
+
+This token needs to have the repo scope to allow pull request merging.
+
+To configure on organization, is required to create a new organization secret on the following link with the name `RELEASER_BYPASS_PR_TOKEN` and the token as a value:
+https://github.com/organizations/{orgname}/settings/secrets/actions/new
+
+> Disclaimer: This personal token is used only to merge the blocked pull requests.
+
+
+Once you already have configured the secret, you can use the token adding a new environment variable on the workflow yaml file with the same name of the secret, `RELEASER_BYPASS_PR_TOKEN`:
+
+```yaml
+name: Release
+on:
+  push:
+    branches:
+      - master
+jobs:
+  release:
+    name: Conventional Release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2-beta
+      - uses: justia/ga-releaser@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASER_BYPASS_PR_TOKEN: ${{ secrets.RELEASER_BYPASS_PR_TOKEN }}
+```
+
+Once you already have this token defined as env variable, the script will use it when a branch merge is protected.
+
+## Known issues
+- In some cases if you have the configuration `remove-version-branch` marked as true, released can be marked as draft because the tag is removed, if you have this issue you can solve setting `remove-version-branch` as false until this problem is solved
