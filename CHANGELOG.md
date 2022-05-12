@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/justia/ga-releaser/compare/1.4.0...1.5.0) (2022-05-12)
+
+
+### Features
+
+* add new jreleaser update to fix issues with tags ([52ea24c](https://github.com/justia/ga-releaser/commit/52ea24c355d8e1b37ccd4941428a1cb20d0ee439))
+
 # [1.4.0](https://github.com/justia/ga-releaser/compare/1.3.0...1.4.0) (2021-03-19)
 
 
