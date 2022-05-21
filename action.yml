@@ -3,7 +3,7 @@ description: 'Releases a new version of the project and generate a changelog usi
 author: 'Justia Inc.'
 
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'node_modules/@justia/releaser/dist/cli/index.js'
 
 branding:
