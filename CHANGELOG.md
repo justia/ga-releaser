@@ -1,3 +1,19 @@
+
+
+# [1.6.0](https://github.com/justia/ga-releaser/compare/1.5.0...1.6.0) (2022-05-25)
+
+
+### Bug Fixes
+
+* add tag match ([2c6e64a](https://github.com/justia/ga-releaser/commit/2c6e64ae3dd1726b50eed1c74dad27c221c28ddc))
+* update package json ([65e3006](https://github.com/justia/ga-releaser/commit/65e3006676a197714686f47684a3062e516b43ee))
+* upgrade node version ([c2d583f](https://github.com/justia/ga-releaser/commit/c2d583ff264e4140eed45135bc61f134f6f09689))
+
+
+### Features
+
+* upgrade jreleaser to 1.3.11 ([5fb7807](https://github.com/justia/ga-releaser/commit/5fb780797ee6772e0e293b1809ecce7d990eb2aa))
+
 # [1.5.0](https://github.com/justia/ga-releaser/compare/1.4.0...1.5.0) (2022-05-12)
 
 
@@ -86,4 +102,3 @@
 
 * ga-releaser ([c0b67d2](https://github.com/justia/ga-releaser/commit/c0b67d2c31936ecedbd56a03f16999b76e21a204))
 * github action ([541e167](https://github.com/justia/ga-releaser/commit/541e167a2bbfa96238a889b6f00ab4dc83ddec50))
-
