@@ -1,6 +1,6 @@
 {
   "name": "@justia/ga-releaser",
-  "version": "0.0.1",
+  "version": "1.6.0",
   "description": "A script to generate releases and changelog",
   "scripts": {},
   "repository": {
@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/justia/ga-releaser#readme",
   "dependencies": {
-    "@justia/releaser": "^1.3.11"
+    "@justia/releaser": "^2.1.0"
   }
 }
