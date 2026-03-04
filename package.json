@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/justia/ga-releaser#readme",
   "dependencies": {
-    "@justia/releaser": "^2.1.1"
+    "@justia/releaser": "^2.2.0"
   }
 }
