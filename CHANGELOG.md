@@ -1,5 +1,12 @@
 
 
+# [1.7.0](https://github.com/justia/ga-releaser/compare/1.6.0...1.7.0) (2026-03-04)
+
+
+### Features
+
+* upgrade the package ([0273afb](https://github.com/justia/ga-releaser/commit/0273afbbb966882cc43eb18a74e2d06c49559ae7))
+
 # [1.6.0](https://github.com/justia/ga-releaser/compare/1.5.0...1.6.0) (2022-05-25)
 
 
