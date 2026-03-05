@@ -1,5 +1,12 @@
 
 
+# [1.8.0](https://github.com/justia/ga-releaser/compare/1.7.0...1.8.0) (2026-03-05)
+
+
+### Features
+
+* add missing inputs ([a0bd6c9](https://github.com/justia/ga-releaser/commit/a0bd6c9633eee01684537dfdad1c33d70b99dff7))
+
 # [1.7.0](https://github.com/justia/ga-releaser/compare/1.6.0...1.7.0) (2026-03-04)
 
 
