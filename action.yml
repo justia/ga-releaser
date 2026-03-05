@@ -31,6 +31,15 @@ inputs:
     default: false
     required: false
 
+  npm-enabled:
+    description: 'Enable NPM configuration. Default: true'
+    default: true
+    required: false
+
+  increment:
+    description: 'Version bump override (major, minor, patch, prerelease, or explicit version)'
+    required: false
+
   preset:
     description: 'The preset from Conventional Changelog to use'
     default: 'angular'
